@@ -141,7 +141,7 @@ class ClientsCopiesController extends AppController {
                         'ClientsCopy.copy_id',
                         'COUNT(ClientsCopy.copy_id) as conta'
                     ),
-                    'group' => 'Task.member_id',
+                    'group' => 'ClientsCopy.copy_id',
                     'order' => array('COUNT(ClientsCopy.copy_id)' => 'asc'),
                     'limit' => 10
         )));
