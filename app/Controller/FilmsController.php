@@ -153,4 +153,16 @@ class FilmsController extends AppController {
         $this->set('result', $result);
     }
 
+    // Lista com quantidadee
+    public function lista() {
+
+        $this->set('films', $this->Film->find('all', array(
+                    'fields' => array(
+                        'Film.title',
+                        'COUNT(Film.id) as conta'
+                    ),
+                    'group' => 'Film.id',
+                    
+        )));
+    }
 }
